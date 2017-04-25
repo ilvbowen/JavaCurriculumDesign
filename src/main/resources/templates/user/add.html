@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+      lang="en" xmlns:xmls="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <style>
+        .content{
+            width: 60%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">学生信息管理系统</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" th:href="@{/user/login/out}" ><span class="glyphicon glyphicon-log-in" ></span> </a></li>
+            <li><a href="#" th:text="'Hello,' + ${session.user} +'!'"><span class="glyphicon glyphicon-log-in" ></span> </a></li>
+        </ul>
+    </div>
+</nav>
+<div class="content">
+<form th:action="addStudent" th:method="post">
+    <div class="form-group">
+        <label for="studentId">学号</label>
+        <input type="text" class="form-control" id="studentId" th:name="studentId" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">姓名</label>
+        <input type="text" class="form-control" id = "name" th:name="name" />
+    </div>
+    <div class="form-group">
+        <label for="sex">性别</label>
+        <input type="text" class="form-control" id="sex" th:name="sex" />
+    </div>
+
+    <div class="form-group">
+        <label for="age">年龄</label>
+        <input type="text" class="form-control" id="age" th:name="age" />
+    </div>
+
+    <div class="form-group">
+        <label for="classess">班级</label>
+        <input type="text" class="form-control" id="classess" th:name="classes" />
+    </div>
+    <div class="form-group">
+        <label for="address">地址</label>
+        <input type="text" class="form-control" id="address" th:name="address" />
+    </div>
+    <button type="submit" class="btn btn-default">确认添加</button>
+</form>
+</div>
+
+</body>
+</html>
